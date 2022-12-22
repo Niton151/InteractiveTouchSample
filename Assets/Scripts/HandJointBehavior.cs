@@ -1,12 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 public class HandJointBehavior : MonoBehaviour
 {
-    [SerializeField] private Transform _trackedHand;
+    [SerializeField] private Transform _controller;
     private bool _onWall;
     private Rigidbody _rb;
     private FixedJoint _joint;
@@ -14,19 +10,16 @@ public class HandJointBehavior : MonoBehaviour
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
-        _joint = _trackedHand.GetComponent<FixedJoint>();
+        _joint = _controller.GetComponent<FixedJoint>();
     }
 
     private void Update()
     {
-        transform.rotation = _trackedHand.rotation;
+        transform.rotation = _controller.rotation;
         if (!_onWall)
         {
-            transform.position = _trackedHand.position;
+            transform.position = _controller.position;
         }
-
-        // _rb.MoveRotation(_trackedHand.rotation);
-        // _rb.MovePosition(_trackedHand.position);
     }
 
     private void OnCollisionStay(Collision other)
