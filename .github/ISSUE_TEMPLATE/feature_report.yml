@@ -29,10 +29,14 @@ body:
       label: What browsers are you seeing the problem on?
       multiple: true
       options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
+        - name: Firefox
+          labels: ['Firefox']
+        - name: Chrome
+          labels: ['Chrome']
+        - name: Safari
+          labels: ['Safari']
+        - name: Microsoft Edge
+          labels: ['Microsoft Edge']
   - type: textarea
     id: logs
     attributes:
@@ -47,17 +51,3 @@ body:
       options:
         - label: I agree to follow this project's Code of Conduct
           required: true
-  - type: dropdown
-    id: browsers
-    attributes:
-      label: What browsers are you seeing the problem on?
-      multiple: true
-      options:
-        - name: Firefox
-          labels: ['Firefox']
-        - name: Chrome
-          labels: ['Chrome']
-        - name: Safari
-          labels: ['Safari']
-        - name: Microsoft Edge
-          labels: ['Microsoft Edge']
